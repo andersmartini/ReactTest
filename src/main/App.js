@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Slider from "./Slider/Slider";
 import Article from "./Articles/Article";
+import Header from "./Header/Header";
 
 
 class App extends Component {
@@ -14,47 +13,127 @@ class App extends Component {
 
     sections = [
             {
-            text:"här står det lite text..."
+                text:"<p> display\n" +
+                "This defines a flex container; inline or block depending on the given value. It enables a flex context for all its direct children.\n" +
+                "\n" +
+                ".container {\n" +
+                "  display: flex; /* or inline-flex */\n" +
+                "}\n" +
+                "Note that CSS columns have no effect on a flex container.\n</p>" +
+                "\n" +
+                "<p>#flex-direction\n" +
+                "\n" +
+                "\n"+
+                "\n"+
+                "This establishes the main-axis, thus defining the direction flex items are placed in the flex container. Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of flex items as primarily laying out either in horizontal rows or vertical columns.\n" +
+                "\n" +
+                ".container {\n" +
+                "  flex-direction: row | row-reverse | column | column-reverse;\n" +
+                "}\n" +
+                "row (default): left to right in ltr; right to left in rtl\n" +
+                "row-reverse: right to left in ltr; left to right in rtl\n" +
+                "column: same as row but top to bottom\n" +
+                "column-reverse: same as row-reverse but bottom to top\n</p>" +
+                "#flex-wrap\n" +
+                "\n" +
+                "\n" +
+                "<p>By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed with this property.\n" +
+                "\n" +
+                ".container{\n" +
+                "  flex-wrap: nowrap | wrap | wrap-reverse;\n" +
+                "}\n" +
+                "nowrap (default): all flex items will be on one line\n" +
+                "wrap: flex items will wrap onto multiple lines, from top to bottom.\n" +
+                "wrap-reverse: flex items will wrap onto multiple lines from bottom to top.\n" +
+                "There are some visual demos of flex-wrap here.\n</p>" +
+                "\n" +
+                "#flex-flow (Applies to: parent flex container element)\n" +
+                "This is a shorthand flex-direction and flex-wrap properties, which together define the flex container's main and cross axes. Default is row nowrap.\n" +
+                "\n" +
+                "flex-flow: <‘flex-direction’> || <‘flex-wrap’>\n",
+                image:{
+                    url:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/South_Shetland-2016-Deception_Island%E2%80%93Chinstrap_penguin_%28Pygoscelis_antarctica%29_04.jpg/1200px-South_Shetland-2016-Deception_Island%E2%80%93Chinstrap_penguin_%28Pygoscelis_antarctica%29_04.jpg",
+                    alt:"små pingviner",
+                    subtitle:"grumpy    "
+                }
             },
             {
-            text:"här står det lite till"
+                text:"display\n" +
+                "This defines a flex container; inline or block depending on the given value. It enables a flex context for all its direct children.\n" +
+                "\n" +
+                ".container {\n" +
+                "  display: flex; /* or inline-flex */\n" +
+                "}\n" +
+                "Note that CSS columns have no effect on a flex container.\n" +
+                "\n" +
+                "#flex-direction\n" +
+                "\n" +
+                "This establishes the main-axis, thus defining the direction flex items are placed in the flex container. Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of flex items as primarily laying out either in horizontal rows or vertical columns.\n" +
+                "\n" +
+                ".container {\n" +
+                "  flex-direction: row | row-reverse | column | column-reverse;\n" +
+                "}\n" +
+                "row (default): left to right in ltr; right to left in rtl\n" +
+                "row-reverse: right to left in ltr; left to right in rtl\n" +
+                "column: same as row but top to bottom\n" +
+                "column-reverse: same as row-reverse but bottom to top\n" +
+                "#flex-wrap\n" +
+                "\n" +
+                "\n" +
+                "By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed with this property.\n" +
+                "\n" +
+                ".container{\n" +
+                "  flex-wrap: nowrap | wrap | wrap-reverse;\n" +
+                "}\n" +
+                "nowrap (default): all flex items will be on one line\n" +
+                "wrap: flex items will wrap onto multiple lines, from top to bottom.\n" +
+                "wrap-reverse: flex items will wrap onto multiple lines from bottom to top.\n" +
+                "There are some visual demos of flex-wrap here.\n" +
+                "\n" +
+                "#flex-flow (Applies to: parent flex container element)\n" +
+                "This is a shorthand flex-direction and flex-wrap properties, which together define the flex container's main and cross axes. Default is row nowrap.\n" +
+                "\n" +
+                "flex-flow: <‘flex-direction’> || <‘flex-wrap’>\n",
+                image: {
+                    url:"http://media.johanna.hantverkskollektivet.se/2012/05/IMG_8852.jpg",
+                    alt:"fast dom är ju fejk såklart.....",
+                    subtitle:"Andra undertexten!"
+                }
+            },
+            {
+                text:"flex-basis\n" +
+                "This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means \"look at my width or height property\" (which was temporarily done by the main-size keyword until deprecated). The content keyword means \"size it based on the item's content\" - this keyword isn't well supported yet, so it's hard to test and harder to know what its brethren max-content, min-content, and fit-content do.",
+                image:{
+                    url:"http://wordpresslab.se/lab/wp-content/gallery/pingvin-parken/1258.jpg",
+                    alt:"fast dom är ju fejk såklart.....",
+                    subtitle:"tredje undertexten"
+                }
             }
-        ]
+        ];
 
-    images = [
+    modals = [
         {
-            url:"https://d3jkudlc7u70kh.cloudfront.net/penguins-fact.jpg",
-            alt:"små pingviner",
-            subtitle:"pyttesmå pingviner"
-        },
-        {
-            url:"http://www.bakgrundsbild.com/save.php?id=1439",
-            alt:"fast dom är ju fejk såklart.....",
-            subtitle:"En pingvinFamilj som posar!"
-        },
-        {
-            url:"https://pbs.twimg.com/profile_images/510360817800183808/Bm19YLZO_400x400.jpeg",
-            alt:"fast dom är ju fejk såklart.....",
-            subtitle:"WooHoooo!!"
+            title:"Articles",
+            items:[{
+                type:"articlePreview",
+                title:"penguins",
+                text:"another article about penguins",
+                thumb:"http://wordpresslab.se/lab/wp-content/gallery/pingvin-parken/1258.jpg"
+            }]
         }
     ];
+
+
+
 
   render() {
 
     return (
       <div className='App'>
-        <div className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className='App-intro'>
-            To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
 
-          <p>the time is {this.state.date.toLocaleTimeString()} </p>
+          <Header modals={this.modals}/>
 
-          <Article sections={this.sections} />
-          <Slider images={this.images} />
+          <Article sections={this.sections} images={this.images} />
       </div>
     );
   }
